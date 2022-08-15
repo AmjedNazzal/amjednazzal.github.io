@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" ng-app="mainModule">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AutoWay | Home</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	
+</head>
+<body>
+
+	<div class="container" ng-controller="mainModuleController as mainCtrl" ng-class="{'change': mainCtrl.change}">
+
+		<div class="hamburger-menu" ng-click="mainCtrl.clicked()">
+			<div class="line1 line"></div>
+			<div class="line2 line"></div>
+			<div class="line3 line"></div>
+		</div>
+		
+		<!-- Header -->
+		<section class="Header center">
+			<div class="logo-wrapper center">
+				<img src="images/logo.png" alt="AutoWay" class="logo">
+				<h1 class="logo-text">
+					AUTOMOBILE MAINTENANCE AND MODIFICATION
+				</h1>
+			</div>
+			
+				
+
+				<nav class="navbar center">
+				<a ui-sref="homeview" ui-sref-active="current" class="navbar-link" ng-click="mainCtrl.hide()">Home</a>
+				<a ui-sref="srvcview" ui-sref-active="current" class="navbar-link" ng-click="mainCtrl.hide()">Services</a>
+				<a ui-sref="ctctview" ui-sref-active="current" class="navbar-link" ng-click="mainCtrl.hide()">Contact</a>
+				<a ui-sref="aboutview" ui-sref-active="current" class="navbar-link" ng-click="mainCtrl.hide()">About</a>
+				</nav>
+
+
+			
+		
+		</section>
+		<!-- End of Header -->
+		
+
+		<!-- Section  -->
+
+		<ui-view>
+
+		</ui-view>
+
+		
+		<!-- Section -->
+
+		<!-- Footer -->
+		<div class="footer center">
+			
+			<div class="footer-content">
+				<p>
+					AutoWay inc. Copyright &copy; All Rights Reserved
+				</p>
+
+				<div class="menu-wrapper">
+					<a ui-sref="homeview" ui-sref-active="current" class="menu-item">Home</a>
+					<a ui-sref="srvcview" ui-sref-active="current" class="menu-item">Services</a>
+					<a ui-sref="ctctview" ui-sref-active="current" class="menu-item">Contact</a>
+					<a ui-sref="aboutview" ui-sref-active="current" class="menu-item">About</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		
+		<!-- End of Footer -->
+
+	</div>
+	
+
+	<!-- Libs -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    
+
+    <!-- Modules -->
+ 	<script src="src/main-module.js"></script>
+ 	<script src="src/routes.js"></script>
+ 	<script src="src/main-module-controller.js"></script>
+
+ 	<!-- Temp specific sources -->
+ 	<script src="template/home/whyUs.component.js"></script>
+ 	<script src="template/home/whyUs.service.js"></script>
+ 	<script src="template/home/ourServices.component.js"></script>
+ 	<script src="template/home/ourServices.service.js"></script>
+ 	<script src="template/home/home.controller.js"></script>
+
+ 	<script src="template/services/services.component.js"></script>
+ 	<script src="template/services/services.srvc.js"></script>
+ 	<script src="template/services/services.controller.js"></script>
+
+ 	<script src="template/contact/contact.controller.js"></script>
+ 	
+ 	
+ 	
+
+
+</body>
+</html>

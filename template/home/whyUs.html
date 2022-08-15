@@ -1,0 +1,15 @@
+<div class="why-us">
+	
+
+					
+					<div class="why-us-item" ng-repeat="item in $ctrl.whyus" ng-class="{'first-item': $first,'last-item': $last}">
+						<div class="why-us-header">
+							<i class= {{item.class}} ></i>
+							<h2>{{ item.title }}</h2>
+						</div>
+						<p>{{ item.description }}</p>
+					</div>
+
+
+
+</div>

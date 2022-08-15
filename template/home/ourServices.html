@@ -1,0 +1,16 @@
+<div class="cards-wrapper">
+				<div class="card" ng-repeat="item in $ctrl.ourservices">
+					<div class="card-img">
+						<a ui-sref="{{ item.title }}">
+						<img ng-src="{{item.img}}" alt="{{ item.title }}">
+						</a>
+					</div>
+					<div class="card-info">
+						<h2>{{ item.title }}</h2>
+						<p>{{ item.description }}</p>
+					</div>
+				</div>
+
+	
+				
+</div>

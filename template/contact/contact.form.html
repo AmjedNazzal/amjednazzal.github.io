@@ -1,0 +1,40 @@
+<div class="contact">
+
+					<div class="contact-box" ng-class="{'done': contactctrl.completed}">
+
+					<form name="contForm" class="my-form" ng-controller="contactCollectorController as ctrl2">
+						<div class="input-group" ng-class="{'focus': ctrl2.focus[0]}">
+							<input name="name" ng-disabled="contactctrl.completed" type="text" ng-model="contactctrl.name" ng-focus="ctrl2.focusedField(0);" ng-blur="contactctrl.addItems(); ctrl2.blurredField();" class="field" id="name" required>
+							<label class="input-label">Company Name</label>
+						</div>
+						<div class="input-group" ng-class="{'focus': ctrl2.focus[1]}">
+							<input name="email" ng-disabled="contactctrl.completed" type="email" ng-model="contactctrl.email" ng-focus="ctrl2.focusedField(1);" ng-blur="contactctrl.addItems(); ctrl2.blurredField();" class="field" id="mail" required>
+							<label class="input-label">Email</label>
+							<span ng-if="contForm.email.$invalid && contForm.email.$touched">
+            				Must be a valid email address: handle@domain format
+          					</span>
+						</div>
+						<div class="input-group-msg" ng-class="{'focus': ctrl2.focus[2]}">
+							<textarea name="msg" ng-disabled="contactctrl.completed" id="message" ng-model="contactctrl.msg" ng-focus="ctrl2.focusedField(2);" ng-blur="contactctrl.addItems(); ctrl2.blurredField();" class="field2" minlength="50" maxlength="220" required></textarea>
+							<label class="message">Message</label>
+							<span
+            					ng-if="(contForm.msg.$error.minlength || contForm.msg.$error.required) && contForm.msg.$touched">
+            					please enter a message of at least 50 characters
+          					</span>
+						</div>
+						<button class="submit-btn" ng-disabled="contForm.$invalid" ng-click="contactctrl.submit()">
+							Submit
+						</button>
+
+					</form>
+
+					</div>
+
+					<div class="thankYou" ng-if="contactctrl.completed">Thank you for contacting us!</div>
+
+
+
+					
+
+
+				</div>
